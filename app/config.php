@@ -22,7 +22,7 @@ if($dev){//lokalno
 
 return [//moramo jos napraviti funkciju koja ce to dohvacat
     'url'=>$url,
-    'nazivApp'=>'PlayerBase',
+    'nazivApp'=>'PlayerBasee',
     'baza'=>$baza,
     'rezultataPoStranici'=>2
 ];
