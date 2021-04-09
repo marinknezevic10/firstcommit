@@ -1,0 +1,73 @@
+.tijelo{
+    min-height:750px;
+}
+body{
+    overflow-x:hidden;
+}
+
+.bitno, .messi{
+    font-size: 1.4rem;
+}
+.razmak{
+    padding-top: 1cm;
+    
+}
+.clanakpetrinja, .clanakneymar,.modre,.card-divider{
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+      }
+
+.bot{
+    padding-top: 0.5cm;
+    position: center;
+}
+.okej{
+    padding-top: 2cm;
+    display: block;
+}
+.font,.malovece,.malovecee,.malovecce{
+    font-size: 1.2rem;
+    text-align:center;
+}
+.fontt, .manjifont{
+    font-size: 1rem;
+}
+.tuchel,.tuchell {
+    position: center;
+    text-align: center;
+}
+
+.clanakneymarr,.messi,.podnaslov{
+    position: center;
+    text-align: center;
+}
+.tuchell,.podnaslov,.pad{
+    padding-top:1cm;
+}
+.padlf,.tuchel,.tuchell,.pele,.pele1,.bitno,.messi,.modre,.modree,.modreee,.title,.malovecee,.ramos,.ramoss,.containerr,.malovecce{
+    position: center;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 960px;
+}
+.pele{
+    padding-top: 2cm;
+}
+.modric,.modreee,.ramos,.malovecce{
+    padding-top: 1cm;
+}
+
+.pomoc, .modree, .modric, .ramoss, .ramos, .malovecee{
+    text-align:center;
+}
+h5:hover{
+    color:blueviolet;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+
+body{
+    font-family: sans-serif;
+}
+
+a:hover{
+    color: blueviolet;
+}
+
+.container{
+    margin-top: 1%;
+
+}
+.card{
+    position: relative;
+    overflow: hidden;
+   
+   margin:  -12px auto;
+   margin-top:5px;
+}
+
+.card img{
+    width: 30%;
+height: auto;
+}
+h3{
+    margin: 10px 0;
+}
+
+.services{
+    padding:5% 10%;
+    text-align: center;
+}
+
+.diff_services{
+    display: flex;
+    margin-top:35px;
+   justify-content: space-between;
+}
+
+.diff_service_item{
+    width:30%;
+
+}
+.diff_service_item img{
+    width:70%;
+    margin-bottom:25px;
+}
+
+.diff_service_item h3{
+    color:black;
+    margin-bottom:15px;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .log{
+      
+      background-size: cover;
+      
+      background-repeat: no-repeat;
+      background-position: -150px -0px;
+      background-attachment: fixed;
+      
+  }
+  label {
+    display:inline-block;
+    text-align: center;
+    line-height: 150%;
+    font-size: .85em;
+}
+

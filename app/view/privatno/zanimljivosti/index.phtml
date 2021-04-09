@@ -1,0 +1,40 @@
+<table>
+    <thead>
+        <tr>
+            <th>Datum osnivanja</th>
+            <th>Naziv stadiona</th>
+            <th>Kapacitet</th>
+            <th style="text-align: right;">
+            <a href="<?=App::config('url')?>zanimljivosti/novo">Dodaj novu zanimljivost</a>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <?php foreach($zanimljivosti as $zanimljivost): ?>
+            <tr>
+                <td><?=$zanimljivost->osnivanje?></td>
+                <td><?=$zanimljivost->nazivstadiona?></td>
+                <td><?=$zanimljivost->kapacitet?></td>
+              
+                <td>
+                    <a href="<?=App::config('url')?>zanimljivosti/promjena?sifra=<?=$zanimljivost->sifra?>">
+                        <i title="promjena" class="fas fa-2x fa-pencil-alt"></i>
+                    </a>
+                    <?php if($zanimljivost->ukupnoklubova==0): ?>
+                        <a href="<?=App::config('url')?>zanimljivosti/brisanje?sifra=<?=$zanimljivost->sifra?>"
+                        onclick="return confirm('Sigurno obrisati <?=Funkcije::escapeSingleQuote($zanimljivost->nazivstadiona) ?>?');">
+                        <i title="brisanje" style="color: red" class="fas fa-trash-alt"></i></a>
+                        <?php endif; ?>
+                </td>
+            </tr>
+
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
+
+
+
+    
+

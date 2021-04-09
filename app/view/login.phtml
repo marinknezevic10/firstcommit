@@ -1,0 +1,22 @@
+
+<div id="page-container">
+<body class="log" style="background-image: url('../public/img/pozadinaa.jpg');">
+<div style="padding-top:50px;">
+<form class="log-in-form" action="<?=App::config('url')?>index/autorizacija"
+method="POST">
+  <p class="pomoc"><h4 class="text-center" style="color:rgb(2, 7, 255)">Prijava</h4></p>
+  <p class="pomoc"><label style="color:rgb(2, 7, 255);width:250px;">Email
+    <input type="email"  name="email" value="<?=$email?>">
+</label>
+  <p class="pomoc"><label style="width:250px;color:rgb(2,7,255);">Lozinka
+    <input type="password" name="lozinka">
+</p></label>
+  <p class="pomoc"><input type="submit" class="button" value="Prijava"></input></p>
+  <h5 style="text-align:center;color:rgb(140, 140, 140)"><?= $poruka; ?></h>
+</form>
+</div>
+</body>
+</div>
+
+
+

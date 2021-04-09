@@ -1,0 +1,40 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nastupi</th>
+            <th>Odigrano minuta</th>
+            <th>Golovi</th>
+            <th>Asistencije</th>
+            <th>Žuti kartoni</th>
+            <th>Crveni kartoni</th>
+            <th style="text-align: right;">
+            <a href="<?=App::config('url')?>statistika/novo">Dodaj novu statistiku</a>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <?php foreach($statistika as $red): ?>
+            <tr>
+                <td><?=$red->nastupi?></td>
+                <td><?=$red->odigranominuta?></td>
+                <td><?=$red->golovi?></td>
+                <td><?=$red->asistencije?></td>
+                <td><?=$red->zutikartoni?></td>
+                <td><?=$red->crvenikartoni?></td>
+              
+                <td>
+                    <a href="<?=App::config('url')?>statistika/promjena?sifra=<?=$red->sifra?>">
+                        <i title="promjena" class="fas fa-2x fa-pencil-alt"></i>
+                    </a>
+                    <?php if($red->ukupnoigraca==0): ?>
+                        <a href="<?=App::config('url')?>statistika/brisanje?sifra=<?=$red->sifra?>"
+                        onclick="return confirm('Sigurno obrisati <?=Funkcije::escapeSingleQuote($red->nastupi) ?>?');">
+                        <i title="brisanje" style="color: red" class="fas fa-trash-alt"></i></a>
+                    <?php endif;?>
+                </td>
+            </tr>
+
+        <?php endforeach; ?>
+    </tbody>
+</table>

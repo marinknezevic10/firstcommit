@@ -1,0 +1,18 @@
+<h1 style="font-size:1.5em;">Treneri</h1>
+<a href="<?=App::config('url')?>trener/novo">Dodaj trenera</a>
+<ul style="list-style-type:none">
+    <?php //izlistavanje trenera
+    foreach($trener as $treneri): ?>
+        <li>
+        <?php echo $treneri->ime .' ' . $treneri->prezime;?> 
+        </span>
+        <a href="<?=App::config('url')?>trener/promjena?sifra=<?=$treneri->sifra?>">
+        <i title="promjena" class="fas fa-2x fa-pencil-alt"></i></a>
+        <?php if($treneri->ukupnoklubova==0):?>
+            <a href="<?=App::config('url')?>trener/brisanje?sifra=<?=$treneri->sifra?>"
+            onclick="return confirm('Sigurno obrisati <?= $treneri->ime. ' ' . $treneri->prezime?>?');">
+            <i title="brisanje" style="color:red" class="fas fa-trash-alt"></i></a>
+        <?php endif; ?>
+        </li>
+    <?php endforeach; ?>
+</ul>

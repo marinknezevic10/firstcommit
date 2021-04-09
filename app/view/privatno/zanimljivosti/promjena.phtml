@@ -1,0 +1,38 @@
+<form class="log-in-form" action="<?=App::config('url')?>zanimljivosti/promjena"
+method="POST">
+  <h4 class="text-center">Promjena postojeće zanimljivosti</h4>
+  
+  <div class="grid-x grid-padding-x">
+  <div class="cell large-4">
+  <label>Osnivanje
+    <input type="date" name="osnivanje" value="<?=$zanimljivosti->osnivanje?>">
+  </label>
+
+  
+  <div class="cell large-4">
+  <label>Naziv stadiona
+    <input type="text" name="nazivstadiona" value="<?=$zanimljivosti->nazivstadiona?>">
+  </label>
+  </div>
+  <div class="cell large-4">
+  <label>Kapacitet
+    <input type="text" name="kapacitet" value="<?=$zanimljivosti->kapacitet?>">
+  </label>
+</div>
+</div>
+</div>
+
+
+  <?= $poruka; ?>
+  
+  <div class="grid-x grid-padding-x">
+  <div class="cell small-6 medium-6 large-6">
+  <a class="alert button expanded" 
+  href="<?=App::config('url')?>zanimljivosti/index"> Nazad</a>
+  </div>
+  <div class="cell small-6 medium-6 large-6">
+  <input type="submit" class="button expanded" value="Promjena"></input>
+  </div>
+</div>
+  <input type="hidden" name="sifra" value="<?=$zanimljivosti->sifra?>">
+</form>

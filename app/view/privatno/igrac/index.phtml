@@ -1,0 +1,67 @@
+
+<div class="grid-x grid-margin-x">
+    <div class="large-11 medium-11 small-10 cell">
+        <form action="<?=App::config('url')?>igrac/index" method="get">
+            <input type="text" name="uvjet" value="<?=$uvjet?>"
+            placeholder="Unesite dio imena ili prezimena ">
+        </form>
+    </div>
+    <div class="large-1 medium-1 small-2 cell" style="padding-top:5px;">
+        
+        <a href="<?=App::config('url')?>igrac/novo">
+        <i class="fas fa-2x fa-plus-circle"></i>
+        </a>
+    </div>
+</div>
+
+
+
+           
+<div class="grid-x grid-margin-x">
+    <?php foreach($entiteti as $red): ?>
+        <div class="large-3 medium-6 cell" style="margin:0 auto;">
+            <div class="callout" style="min-height: 450px; text-align: center;">
+
+                <img src="<?=$red->slika?>" 
+                alt="<?=$red->ime?> <?=$red->prezime?>"
+                style="max-height: 200px;"><br />
+                <?=$red->ime?> <?=$red->prezime?><br />
+                <tr>Naziv kluba: <?=$red->klub?><br /></tr>
+                <tr>Mjesto rođenja: <?=$red->mjestorodenja?></tr><br />
+                <tr>Nastupi: <?=$red->nastupi?><br/></tr>
+                <tr>Golovi: <?=$red->golovi?><br /></tr>
+                <tr>Asistencije: <?=$red->asistencije?></tr>
+
+                
+
+                <hr />
+                <a href="<?=App::config('url')?>igrac/promjena?sifra=<?=$red->sifra?>">
+                        <i title="promjena" class="fas fa-2x fa-pencil-alt"></i>
+                    </a> 
+                    <?php if($red->nastupi==0): ?>
+                        <a href="<?=App::config('url')?>igrac/brisanje?sifra=<?=$red->sifra?>"
+                        onclick="return confirm('Sigurno obrisati <?=Funkcije::escapeSingleQuote($red->ime . ' ' . $red->prezime) ?>?');">
+                        <i title="brisanje" style="color: red" class="fas fa-trash-alt"></i></a>
+                    <?php endif;?>
+
+            </div>
+        </div>
+
+    <?php endforeach; ?>
+
+    <div class="cell">
+    <div class="callout">
+        <nav aria-label="Pagination">
+            <ul class="pagination text-center">
+                <li class="pagination-previous"> 
+                <a href="<?=App::config('url')?>igrac/index?stranica=<?php echo $stranica-1 ?>&uvjet=<?=$uvjet ?>">Prethodno</a> </li>
+                <li class="current"><span class="show-for-sr">
+                Vi ste na</span> <?php echo $stranica ?> / <?php echo $ukupnoStranica ?></li>
+                <li class="pagination-next">
+                <a href="<?=App::config('url')?>igrac/index?stranica=<?php echo $stranica+1 ?>&uvjet=<?=$uvjet ?>" aria-label="Sljedeća stranica">Sljedeće </a></li>
+            </ul>
+        </nav>
+    </div>
+    </div>
+    
+</div>

@@ -1,0 +1,38 @@
+<div class="table-scroll">
+<table>
+    <thead>
+        <tr>
+        <th>
+            <a href="<?=App::config('url')?>klub/novo">Dodaj novi klub</a>
+            </th>
+            <th>Naziv</th>
+            <th>Broj igrača u klubu</th>
+            <th>Zanimljivosti(naziv stadiona i kapacitet)</th>
+            <th>Trener</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($entiteti as $red): ?>
+            <tr>
+            <td>
+                    <a href="<?=App::config('url')?>klub/promjena?sifra=<?=$red->sifra?>">
+                        <i title="promjena" class="fas fa-2x fa-pencil-alt"></i>
+                    </a>
+                    
+                </td>
+                <td><?=$red->naziv?></td>
+                <td><?=$red->brojigracauklubu?></td>
+                <td><?=$red->zanimljivosti?></td>
+                <td><?=$red->trener?></td>
+                <td><?php if($red->brojigracauklubu==0): ?>
+                        <a href="<?=App::config('url')?>klub/brisanje?sifra=<?=$red->sifra?>"
+                        onclick="return confirm('Sigurno obrisati <?=Funkcije::escapeSingleQuote($red->naziv) ?>?');">
+                        <i title="brisanje" style="color: red" class="fas fa-trash-alt"></i></a>
+                    <?php endif;?></td>
+            </tr>
+
+        <?php endforeach; ?>
+    </tbody>
+</table>
+</div>

@@ -1,0 +1,42 @@
+[13-Mar-2021 20:45:43 Europe/Zagreb] PHP Fatal error:  Uncaught PDOException: SQLSTATE[28000] [1045] Access denied for user 'leta_zavrsni'@'localhost' (using password: YES) in /home/leta/public_html/app/model/DB.php:15
+Stack trace:
+#0 /home/leta/public_html/app/model/DB.php(15): PDO->__construct('mysql:host=loca...', 'leta_zavrsni', 'hiimbroken123')
+#1 /home/leta/public_html/app/model/DB.php(26): DB->__construct(Array)
+#2 /home/leta/public_html/app/controller/IndexController.php(95): DB::getInstanca()
+#3 /home/leta/public_html/app/model/App.php(31): IndexController->autorizacija()
+#4 /home/leta/public_html/index.php(33): App::start()
+#5 {main}
+  thrown in /home/leta/public_html/app/model/DB.php on line 15
+[13-Mar-2021 20:46:01 Europe/Zagreb] PHP Fatal error:  Uncaught PDOException: SQLSTATE[28000] [1045] Access denied for user 'leta_zavrsni'@'localhost' (using password: YES) in /home/leta/public_html/app/model/DB.php:15
+Stack trace:
+#0 /home/leta/public_html/app/model/DB.php(15): PDO->__construct('mysql:host=loca...', 'leta_zavrsni', 'hiimbroken123')
+#1 /home/leta/public_html/app/model/DB.php(26): DB->__construct(Array)
+#2 /home/leta/public_html/app/controller/IndexController.php(95): DB::getInstanca()
+#3 /home/leta/public_html/app/model/App.php(31): IndexController->autorizacija()
+#4 /home/leta/public_html/index.php(33): App::start()
+#5 {main}
+  thrown in /home/leta/public_html/app/model/DB.php on line 15
+[26-Mar-2021 21:00:13 Europe/Zagreb] PHP Fatal error:  Uncaught Error: Class 'zanimljivosti' not found in /home/leta/public_html/app/controller/ZanimljivostiController.php:65
+Stack trace:
+#0 /home/leta/public_html/app/model/App.php(31): ZanimljivostiController->promjena()
+#1 /home/leta/public_html/index.php(33): App::start()
+#2 {main}
+  thrown in /home/leta/public_html/app/controller/ZanimljivostiController.php on line 65
+[26-Mar-2021 21:00:17 Europe/Zagreb] PHP Fatal error:  Uncaught Error: Class 'zanimljivosti' not found in /home/leta/public_html/app/controller/ZanimljivostiController.php:65
+Stack trace:
+#0 /home/leta/public_html/app/model/App.php(31): ZanimljivostiController->promjena()
+#1 /home/leta/public_html/index.php(33): App::start()
+#2 {main}
+  thrown in /home/leta/public_html/app/controller/ZanimljivostiController.php on line 65
+[26-Mar-2021 21:00:20 Europe/Zagreb] PHP Fatal error:  Uncaught Error: Class 'zanimljivosti' not found in /home/leta/public_html/app/controller/ZanimljivostiController.php:65
+Stack trace:
+#0 /home/leta/public_html/app/model/App.php(31): ZanimljivostiController->promjena()
+#1 /home/leta/public_html/index.php(33): App::start()
+#2 {main}
+  thrown in /home/leta/public_html/app/controller/ZanimljivostiController.php on line 65
+[26-Mar-2021 21:00:51 Europe/Zagreb] PHP Fatal error:  Uncaught Error: Class 'zanimljivosti' not found in /home/leta/public_html/app/controller/ZanimljivostiController.php:65
+Stack trace:
+#0 /home/leta/public_html/app/model/App.php(31): ZanimljivostiController->promjena()
+#1 /home/leta/public_html/index.php(33): App::start()
+#2 {main}
+  thrown in /home/leta/public_html/app/controller/ZanimljivostiController.php on line 65
