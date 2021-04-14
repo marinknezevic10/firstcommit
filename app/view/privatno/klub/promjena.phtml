@@ -47,6 +47,38 @@ method="POST">
 </div>
 
 <div class="grid-x grid-padding-x">
+    <div class="cell">
+      <hr />
+      <input type="text" id="uvjet"
+            placeholder="Unesite dio imena">
+      <table>
+        <thead>
+          <tr>
+            <th>Igrač</th>
+            <th>Akcija</th>
+          </tr>
+        </thead>
+        <tbody id="igraci">
+        <?php foreach($entitet->igraci as $red): ?>
+            <tr>
+                <td><?=$red->ime . ' ' . $red->prezime;?></td>
+                <td>
+                <a class="brisanje" href="#" 
+                id="p_<?=$red->sifra?>">
+                        <i title="brisanje" style="color: red" 
+                        class="fas fa-trash-alt"></i>
+                        </a>
+                </td>
+            </tr>
+
+        <?php endforeach; ?>
+        </tbody>
+      </table>
+      <hr />
+    </div>
+  </div>
+
+<div class="grid-x grid-padding-x">
   <div class="cell">
   <div class="callout">
   <?= $poruka; ?>
