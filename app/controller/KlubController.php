@@ -59,9 +59,8 @@ class KlubController extends AutorizacijaController
         $this->entitet = (object) $_POST;
         try {
             $this->kontrola();
-            $zadnjaSifraKluba=Klub::dodajNovi($this->entitet);
-            header('location: ' . App::config('url') . 
-            'klub/novo?sifra=' . $zadnjaSifraKluba);
+           Klub::dodajNovi($this->entitet);
+           $this->index();
         } catch (Exception $e) {
             $this->poruka=$e->getMessage();
             $this->novoView();

@@ -8,11 +8,11 @@
         </span>
         <a href="<?=App::config('url')?>trener/promjena?sifra=<?=$treneri->sifra?>">
         <i title="promjena" class="fas fa-2x fa-pencil-alt"></i></a>
-        <?php if($treneri->ukupnoklubova==0):?>
+        
             <a href="<?=App::config('url')?>trener/brisanje?sifra=<?=$treneri->sifra?>"
             onclick="return confirm('Sigurno obrisati <?= $treneri->ime. ' ' . $treneri->prezime?>?');">
             <i title="brisanje" style="color:red" class="fas fa-trash-alt"></i></a>
-        <?php endif; ?>
+        
         </li>
     <?php endforeach; ?>
 </ul>

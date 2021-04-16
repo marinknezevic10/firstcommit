@@ -92,9 +92,7 @@ class IgracController extends AutorizacijaController
         $this->entitet = (object) $_POST;
         try {
             $this->kontrola();
-            $zadnjaSifraIgraca=Igrac::dodajNovi($this->entitet);
-            header('location: ' . App::config('url') . 
-            'igrac/novo?sifra=' . $zadnjaSifraIgraca);
+            $this->index();
         } catch (Exception $e) {
             $this->poruka=$e->getMessage();
             $this->novoView();

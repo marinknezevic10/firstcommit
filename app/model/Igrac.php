@@ -17,7 +17,7 @@ class Igrac
 
         $izraz=$veza->prepare('
         
-        select a.sifra,a.ime,a.prezime,b.naziv
+        select a.sifra,a.ime,a.prezime,b.naziv 
        from igrac a inner join klub b on a.klub=b.sifra
        where a.klub=:sifra;
         
@@ -37,7 +37,7 @@ class Igrac
         $izraz=$veza->prepare('
         
         select a.sifra, a.ime, a.prezime,a.mjestorodenja as mjestorodenja,
-        b.naziv as klub,c.nastupi as nastupi,
+        b.naziv as naziv,c.nastupi as nastupi,
         c.golovi as golovi,c.asistencije as asistencije
         from igrac a inner join klub b
         on a.klub =b.sifra 

@@ -16,12 +16,17 @@
         <input type="text"  name="prezime" value="<?=$entitet->prezime?>">
       </label>
     </div>
+    <div class="cell large-6">
+      <label>Mjesto rođenja
+        <input type="text"  name="mjestorodenja" value="<?=$entitet->mjestorodenja?>">
+      </label>
+  </div>
   </div>
 
   <div class="grid-x grid-padding-x">
     <div class="cell">
     <label>Naziv kluba
-<select name="nazivkluba">
+<select name="klub">
           <?php foreach($klubovi as $klub): ?>
             <option <?php 
               if($entitet->klub==$klub->sifra){

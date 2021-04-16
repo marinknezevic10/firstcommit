@@ -15,12 +15,8 @@ class Klub
 
         $izraz=$veza->prepare('
         
-        select a.sifra, a.naziv,a.brojigracauklubu,b.ime,b.prezime,c.nazivstadiona,c.kapacitet
-        from klub a inner join trener b
-        on a.trener =b.sifra 
-        inner join zanimljivosti c on
-        a.zanimljivosti =c.sifra 
-        where a.sifra =:sifra;
+        select * from igrac
+        where klub =:sifra
         
         ');
         $izraz->execute(['sifra'=>$sifra]);
@@ -73,10 +69,12 @@ class Klub
         values (:naziv,:brojigracauklubu,:zanimljivosti,:trener)
         ');
         
+        //print_r($klub);
+        //stdClass Object ( [naziv] => dsad [brojigracauklubu] => [zanimljivosti] => 3 [trener] => 1 )
         //izvodi upit
         //execute prima array indeksni niz, pošto smo $smjer mijenjali u object,ovdje ga vraćamo u array
         $izraz->execute((array)$klub);
-        return $veza->lastInsertId();
+       
     }
 
     public static function promjeniPostojeci($klub)
@@ -106,4 +104,8 @@ class Klub
       
         $izraz->execute(['sifra'=>$sifra]);
     }
+
+
+
+
 }

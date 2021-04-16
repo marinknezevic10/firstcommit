@@ -35,12 +35,12 @@ create table igrac(
 	sifra int not null primary key auto_increment,
 	ime varchar(59) not null,
 	prezime varchar(59) not null,
-	mjestorodenja varchar(70) not null,
+	mjestorodenja varchar(70) ,
 	klub int not null,
 	nacionalnost varchar(50),
 	pozicija varchar(20),
 	datumrodenja datetime,
-	statistika int
+	statistika int not null
 
 );
 
@@ -49,7 +49,7 @@ create table statistika(
 	nastupi int not null,
 	odigranominuta int,
 	golovi int not null,
-	asistencije int,
+	asistencije int not null,
 	zutikartoni int,
 	crvenikartoni int
 
@@ -57,6 +57,7 @@ create table statistika(
 
 create table klub(
 	sifra int not null primary key auto_increment,
+	naziv varchar(50)not null,
 	brojigracauklubu int,
 	prosjekgodina decimal(3,1),
 	zanimljivosti int not null,
