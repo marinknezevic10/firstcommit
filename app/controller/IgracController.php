@@ -13,6 +13,12 @@ class IgracController extends AutorizacijaController
     private $klubovi=null;
     private $statistike=null;
 
+    public function traziigrace()
+    {
+        header('Content-type: application/json');
+        echo json_encode(Igrac::traziigrace());
+    }
+
     public function __construct()
     {
         parent::__construct();

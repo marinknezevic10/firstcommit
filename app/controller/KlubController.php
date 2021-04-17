@@ -38,13 +38,6 @@ class KlubController extends AutorizacijaController
 
         $klubovi=Klub::ucitajSve();
 
-        foreach($klubovi as $k){
-            //https://www.php.net/manual/en/datetime.format.php
-            if($k->trener==null){
-                $k->trener='[nije postavljeno]';
-            }
-        }
-
         $this->view->render($this->viewDir . 'index',[
             'entiteti'=>$klubovi
         ]);

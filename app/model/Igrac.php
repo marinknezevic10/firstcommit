@@ -3,6 +3,29 @@
 class Igrac
 {
 
+    public static function traziigrace()
+    {
+
+        $veza = DB::getInstanca();
+        $izraz=$veza->prepare('
+        
+        select a.sifra, a.ime, a.prezime,a.mjestorodenja,b.naziv,c.nastupi as nastupi,.c.golovi as golovi,
+        c.asistencije as asistencije
+        from igrac a
+        inner join klub b on a.klub=b.sifra
+        where concat(a.ime,\'\',a.prezime) like :uvjet
+        group by a.sifra,a.ime,a.prezime,b.naziv limit 10
+        ');
+       
+        $izraz->execute([
+            'uvjet'=>'%' . $_GET['uvjet'] . '%',
+            
+        ]);
+        return $izraz->fetchAll();
+
+
+    }
+
     public static function ucitaj($sifra)
     {
         $veza = DB::getInstanca();
@@ -37,17 +60,18 @@ class Igrac
         $izraz=$veza->prepare('
         
         select a.sifra, a.ime, a.prezime,a.mjestorodenja as mjestorodenja,
-        b.naziv as naziv,c.nastupi as nastupi,
+        b.naziv as nazivkluba,c.nastupi as nastupi,
         c.golovi as golovi,c.asistencije as asistencije
         from igrac a inner join klub b
         on a.klub =b.sifra 
         inner join statistika c on
         a.statistika =c.sifra
+        where concat(a.ime,\'\',a.prezime) like :uvjet
         group by a.sifra,a.ime,a.prezime,b.naziv limit :od,:rps;
         
         ');
 
-        
+        $izraz->bindParam('uvjet',$uvjet);
         $izraz->bindValue('od',$od, PDO::PARAM_INT);
         $izraz->bindValue('rps',$rps, PDO::PARAM_INT);
         $izraz->execute();
@@ -86,7 +110,7 @@ class Igrac
         
         ');
         $izraz->execute((array)$igrac);
-        return $veza->lastInsertId();
+        
     }
 
     public static function promjeniPostojeci($igrac)

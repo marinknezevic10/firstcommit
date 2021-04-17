@@ -72,7 +72,7 @@ class Klub
         //print_r($klub);
         //stdClass Object ( [naziv] => dsad [brojigracauklubu] => [zanimljivosti] => 3 [trener] => 1 )
         //izvodi upit
-        //execute prima array indeksni niz, pošto smo $smjer mijenjali u object,ovdje ga vraćamo u array
+        //execute prima array indeksni niz, pošto smo $klub mijenjali u object,ovdje ga vraćamo u array
         $izraz->execute((array)$klub);
        
     }
