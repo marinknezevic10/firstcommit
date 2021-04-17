@@ -9,8 +9,7 @@ class Igrac
         $veza = DB::getInstanca();
         $izraz=$veza->prepare('
         
-        select a.sifra, a.ime, a.prezime,a.mjestorodenja,b.naziv,c.nastupi as nastupi,.c.golovi as golovi,
-        c.asistencije as asistencije
+        select a.sifra, a.ime, a.prezime,
         from igrac a
         inner join klub b on a.klub=b.sifra
         where concat(a.ime,\'\',a.prezime) like :uvjet
@@ -85,10 +84,8 @@ class Igrac
         $izraz=$veza->prepare('
         
         select count(a.sifra) from igrac a 
-        inner join klub b on a.klub =b.sifra
-        inner join statistika c on a.statistika=c.sifra 
-        where concat(c.nastupi, \' \',c.golovi,\'\',
-        ifnull(b.naziv,\'\')) like :uvjet
+        inner join klub b on a.klub =b.sifra 
+        where concat(a.ime,\'\',a.prezime) like :uvjet
         ');
        
         $izraz->bindParam('uvjet',$uvjet);
