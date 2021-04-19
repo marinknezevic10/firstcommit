@@ -4,9 +4,10 @@ method="POST">
   
   <div class="grid-x grid-padding-x">
   <div class="cell large-4">
-  <label>Osnivanje
-    <input type="date" name="osnivanje" value="<?=$zanimljivosti->osnivanje?>">
-  </label>
+  <label>Datum osnivanja
+      <input type="datetime-local"
+       name="osnivanje" value="<?=$zanimljivosti->osnivanje; ?>"> 
+      </label>
 
   
   <div class="cell large-4">

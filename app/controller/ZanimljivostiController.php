@@ -16,11 +16,18 @@ class ZanimljivostiController extends AutorizacijaController
 
     public function index()
     {
+        $zanimljivosti=Zanimljivosti::ucitajSve();
         
         $this->view->render($this->viewDir. 'index',[
         
             'zanimljivosti'=>Zanimljivosti::ucitajSve()
         ]);
+
+        foreach($zanimljivosti as $z){
+            //https://www.php.net/manual/en/datetime.format.php
+            $z->osnivanje=date('d.m.Y. H:i', strtotime($z->osnivanje));
+            
+        }
         
     }
 
@@ -56,6 +63,8 @@ class ZanimljivostiController extends AutorizacijaController
             }
             //ovdje smo sigurni da je sifra postavljena, te ucitamo za sifru zeljeni smjer
            $this->zanimljivosti=Zanimljivosti::ucitaj($_GET['sifra']);//u klasi smjer trebamo ucitati podatke o smjeru
+           $datum=date('Y-m-d\TH:i', strtotime($this->zanimljivosti->osnivanje));
+            $this->zanimljivosti->osnivanje=$datum;
            $this->poruka='Promijenite željene podatke';
            $this->promjenaView();//zatim pozovi promjenaView
            return;
@@ -84,7 +93,7 @@ class ZanimljivostiController extends AutorizacijaController
     private function noviZanimljivosti()
     {
             $this->zanimljivosti = new stdClass();
-            $this->zanimljivosti->osnivanje=date('Y-m-d\TH:i');
+            $this->zanimljivosti->osnivanje=date('Y-m-d\TH:i');;
             $this->zanimljivosti->nazivstadiona='';
             $this->zanimljivosti->kapacitet='';
             $this->poruka='Unesite tražene podatke';
