@@ -1,3 +1,0 @@
-[14-Apr-2021 20:56:15 Europe/Zagreb] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /home/leta/public_html/app/model/Igrac.php on line 88
-[14-Apr-2021 21:04:49 Europe/Zagreb] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /home/leta/public_html/app/model/Igrac.php on line 88
-[17-Apr-2021 18:27:53 Europe/Zagreb] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /home/leta/public_html/app/model/Igrac.php on line 88

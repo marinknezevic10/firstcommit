@@ -59,8 +59,9 @@ class Igrac
         $izraz=$veza->prepare('
         
         select a.sifra, a.ime, a.prezime,a.mjestorodenja as mjestorodenja,
-        b.naziv as nazivkluba,c.nastupi as nastupi,
-        c.golovi as golovi,c.asistencije as asistencije
+        b.naziv as klub,c.nastupi as nastupi,
+        c.golovi as golovi,c.asistencije as asistencije,
+        concat(c.nastupi,\'\',c.golovi,\'\',c.asistencije) as statistika
         from igrac a inner join klub b
         on a.klub =b.sifra 
         inner join statistika c on
@@ -102,9 +103,9 @@ class Igrac
         $veza = DB::getInstanca();
         $izraz=$veza->prepare('
         
-            insert into igrac (ime,prezime,mjestorodenja,klub,statistika)
-            values (:ime,:prezime,:mjestorodenja,:klub,:statistika)
-        
+        insert into igrac (ime,prezime,mjestorodenja,klub,statistika)
+        values (:ime,:prezime,:mjestorodenja,:klub,:statistika)
+
         ');
         $izraz->execute((array)$igrac);
         

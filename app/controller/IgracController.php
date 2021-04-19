@@ -98,6 +98,7 @@ class IgracController extends AutorizacijaController
         $this->entitet = (object) $_POST;
         try {
             $this->kontrola();
+            Igrac::dodajNovi($this->entitet);
             $this->index();
         } catch (Exception $e) {
             $this->poruka=$e->getMessage();
