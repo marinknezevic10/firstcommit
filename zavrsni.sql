@@ -70,7 +70,7 @@ create table zanimljivosti(
 	sifra int not null primary key auto_increment,
 	osnivanje datetime,
 	nazivstadiona varchar(90),
-	kapacitet decimal(6,3)
+	kapacitet int
 	
 );
 

@@ -38,7 +38,7 @@
                 <a href="<?=App::config('url')?>igrac/promjena?sifra=<?=$red->sifra?>">
                         <i title="promjena" class="fas fa-2x fa-pencil-alt"></i>
                     </a> 
-                    <?php if($red->statistika==0): ?>
+                    <?php if($red->nastupi==0): ?>
                         <a href="<?=App::config('url')?>igrac/brisanje?sifra=<?=$red->sifra?>"
                         onclick="return confirm('Sigurno obrisati <?=Funkcije::escapeSingleQuote($red->ime . ' ' . $red->prezime) ?>?');">
                         <i title="brisanje" style="color: red" class="fas fa-trash-alt"></i></a>

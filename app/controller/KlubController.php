@@ -12,6 +12,7 @@ class KlubController extends AutorizacijaController
     private $poruka='';
     private $zanimljivo=null;
     private $treneri=null;
+    
 
     public function __construct()
     {
@@ -37,6 +38,12 @@ class KlubController extends AutorizacijaController
     {
 
         $klubovi=Klub::ucitajSve();
+        
+        foreach($klubovi as $k){
+            if($k->trener==null){
+                $k->trener='[nije postavljeno]';
+            }
+        }
 
         $this->view->render($this->viewDir . 'index',[
             'entiteti'=>$klubovi
