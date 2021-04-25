@@ -134,14 +134,20 @@ class IndexController extends Controller
             'poruka'=>$poruka
         ]);
     }
-    public function zbrajanje()
-        {
-        $this->view->render('zbrajanje',[
-            'zbroj'=>$_POST['broj1']+ $_POST['broj2']
-            
-        ]);
-        
+
+    public function ajax()
+    {
+        echo json_encode(Igrac::ucitajSve(1,'%'));
     }
+
+    //public function zbrajanje()
+      //  {
+        //$this->view->render('zbrajanje',[
+          //  'zbroj'=>$_POST['broj1']+ $_POST['broj2']
+            
+        //]);
+        
+    //}
    
     //public function test()
     //{
