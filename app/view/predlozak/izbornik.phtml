@@ -35,14 +35,12 @@
       <div class="top-bar-right">
       
     <ul class="menu">
-    <ul class="menu">
-      <li><input type="search" placeholder="Traži..."></li>
-      <li><button type="button" class="button">Traži</button></li>
-    </ul>
+    
       <li>
       <?php
       if(!isset($_SESSION['autoriziran'])): ?>
       <a href="<?=App::config('url')?>index/login">Prijava</a>
+      <li><a href="<?=App::config('url')?>index/register">Registracija</a></li>
       <?php else: ?>
         <a href="<?=App::config('url')?>index/logout">Odjava
       <?=$_SESSION['autoriziran']->ime?>

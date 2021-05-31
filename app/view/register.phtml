@@ -1,0 +1,11 @@
+
+<div id="page-container">
+  <div class="signup-form">
+    <form action="<?=App::config('url')?>index/process" method="post">
+      <input type="text" name="username" placeholder="korisničko ime"/>
+      <input type="password"  name="password" placeholder="lozinka"/>
+      <input type="text"  name="email" placeholder="email"/>
+      <input type="submit" value="Registracija" class="btn" name="btn-save">
+      <p class="message">Već ste registrirani? <a href="<?=App::config('url')?>index/login">Logiraj se</a></p>
+    </form>
+    

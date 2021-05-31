@@ -5,7 +5,13 @@ class IndexController extends Controller
     public function index()
     {
         $this->view->render('pocetna');
-    }    
+    }
+    public function process()
+    {
+        $this->view->render('process');
+
+    }
+   
 
     public function pocetna()
     {
@@ -67,6 +73,11 @@ class IndexController extends Controller
         $this->loginView('','');
     }
 
+    public function register()
+    {
+        $this->registerView('','');
+    }
+
     public function logout()
     {
         unset($_SESSION['autoriziran']);
@@ -97,6 +108,7 @@ class IndexController extends Controller
         $izraz=$veza->prepare('
         
             select * from operater where email=:email
+            
         
         ');
         $izraz->execute(['email'=>$_POST['email']]);
@@ -112,6 +124,8 @@ class IndexController extends Controller
             $this->loginView($_POST['email'],'Kombinacija email i lozinka ne odgovaraju');
             return;
         }
+
+
 
 
        /* if(!($_POST['email']==='edunova@edunova.hr' &&
@@ -130,6 +144,14 @@ class IndexController extends Controller
     private function loginView($email,$poruka)
     {
         $this->view->render('login',[
+            'email'=>$email,
+            'poruka'=>$poruka
+        ]);
+    }
+
+    private function registerView($email,$poruka)
+    {
+        $this->view->render('register',[
             'email'=>$email,
             'poruka'=>$poruka
         ]);

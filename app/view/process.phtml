@@ -1,0 +1,35 @@
+<?php
+
+require_once('connection.php');
+
+if(isset($_POST['btn-save']))
+{
+    
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+
+    if(empty($username) || empty($email) || empty($password))
+    {
+        echo 'Molimo popunite polja';
+    }
+    else
+    {
+        $pass = md5($password);//encryption
+        $sql = "insert into users (username,email,password) values('$username','$email','$pass')";
+        $result = mysqli_query($con, $sql);//passing two parameters
+
+        if($result)
+        {
+
+            'Registrirani ste!';
+        }
+        else
+        {
+            echo 'Nešto nije uredu';
+        }
+    }
+
+}
+
+?>
